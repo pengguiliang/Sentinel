@@ -72,7 +72,11 @@ public class ParamFlowRuleEntity extends AbstractRuleEntity<ParamFlowRule> {
 
     @JsonIgnore
     public List<ParamFlowItem> getParamFlowItemList() {
-        return rule.getParamFlowItemList();
+        if(null!=rule&&null!=rule.getParamFlowItemList()){
+            return rule.getParamFlowItemList();
+        }else{
+            return null;
+        }
     }
 
     @JsonIgnore
